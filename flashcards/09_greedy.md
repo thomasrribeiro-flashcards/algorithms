@@ -14,6 +14,14 @@ A: An algorithm that makes the LOCALLY OPTIMAL choice at each step, never revisi
 Q: Why is PROVING a greedy algorithm correct often HARD?
 A: Because "locally optimal" doesn't obviously yield globally optimal — intuition is cheap, proof is not. Standard techniques: (1) [Exchange argument]: show any non-greedy solution can be improved (or matched) by a greedy one. (2) [Greedy stays ahead]: inductively prove greedy's partial solution is at least as good as any other at each step. (3) [Matroid theory]: characterize problems where greedy provably works. Without a proof, "greedy looks right" often means "greedy is wrong."
 
+## 9.1b Pattern Recognition: When to Try Greedy
+
+Q: A problem asks for an optimal selection or ordering and you can describe a SIMPLE local rule (smallest, largest, earliest finish, best ratio). What's your first move?
+A: Try greedy with that rule, then prove correctness via exchange argument or "stays ahead." If you can't prove it, suspect a counterexample exists — fall back to DP.
+
+Q: A problem fits the greedy template but multiple sort orders are plausible (sort by start? finish? duration?). How do you pick?
+A: Try the smallest non-trivial counterexamples for each order. The order that survives every counterexample is the candidate; then prove it formally. (For interval scheduling: finish time wins because "finish early frees the future.")
+
 ## 9.2 Interval Scheduling
 
 Q: Describe the [interval scheduling maximization] problem and the greedy solution.

@@ -9,14 +9,14 @@ tags = ["cs", "algorithms", "asymptotic-analysis", "big-o", "recurrences", "mast
 ## 1.1 Why Asymptotic Analysis
 
 Q: Why analyze algorithms ASYMPTOTICALLY rather than measuring actual runtime?
-A: Because actual runtime depends on hardware, compiler, input distribution, and implementation details — all volatile. ASYMPTOTIC analysis isolates the ALGORITHMIC behavior as input size $n \to \infty$: which operations dominate? How does runtime GROW with $n$? This gives a portable, implementation-independent measure that predicts behavior on large inputs and lets us compare algorithms cleanly (e.g., $O(n \log n)$ sort beats $O(n^2)$ sort for large $n$ regardless of machine).
+A: Actual runtime depends on hardware, compiler, and implementation — all volatile. Asymptotic analysis isolates how runtime GROWS with $n$, giving a portable, implementation-independent comparison (e.g., $O(n \log n)$ sort beats $O(n^2)$ for large $n$ on any machine).
 
 ## 1.2 Big-O Notation
 
 C: $f(n) = O(g(n))$ means there exist constants $c > 0, n_0 \geq 0$ such that for all $n \geq n_0$: [$f(n) \leq c \cdot g(n)$].
 
 Q: What does $O(g(n))$ EXPRESS intuitively?
-A: An UPPER BOUND on growth — $f$ grows NO FASTER than $g$ (up to a constant). Says "eventually, $f$ lies below some constant multiple of $g$." Hides constants and lower-order terms: $3n^2 + 100n + 5 = O(n^2)$. The STANDARD way to state worst-case running time. Does NOT say $f$ actually achieves $g$'s rate — it could be much slower.
+A: An UPPER BOUND on growth — $f$ grows no faster than $g$ up to a constant. Hides constants and lower-order terms ($3n^2 + 100n + 5 = O(n^2)$). Does NOT mean $f$ actually achieves $g$'s rate — it could be much slower.
 
 ## 1.3 Omega and Theta
 
@@ -52,6 +52,12 @@ Q: What are the THREE main techniques for SOLVING recurrences?
 A: (1) [Substitution]: guess a solution and verify by induction. (2) [Recursion tree]: expand the recurrence level by level, sum the work per level. (3) [Master theorem]: directly handle recurrences of the form $T(n) = a T(n/b) + f(n)$. Each has strengths: substitution is general; recursion tree builds intuition; master theorem is plug-and-chug for common cases.
 
 ## 1.7 The Master Theorem
+
+Q: Before learning the master theorem, predict: for $T(n) = 2T(n/2) + n$ (mergesort) vs $T(n) = 2T(n/2) + n^2$, which has bigger asymptotic runtime and why?
+A: The second. Heavier per-level work ($n^2$ vs $n$) dominates. Mergesort is $\Theta(n \log n)$; the second collapses to $\Theta(n^2)$ because the top level alone is $n^2$ and lower levels shrink geometrically.
+
+Q: You see a recurrence of the form $T(n) = a T(n/b) + f(n)$. What's your first move?
+A: Compute $c = \log_b a$, then compare $f(n)$ to $n^c$ — that comparison decides which master theorem case applies.
 
 Q: State the [master theorem] for recurrences $T(n) = a T(n/b) + f(n)$ with $a \geq 1, b > 1$.
 A: Let $c = \log_b a$. (1) If $f(n) = O(n^{c - \epsilon})$ for some $\epsilon > 0$: $T(n) = \Theta(n^c)$. (2) If $f(n) = \Theta(n^c \log^k n)$: $T(n) = \Theta(n^c \log^{k+1} n)$. (3) If $f(n) = \Omega(n^{c + \epsilon})$ AND regularity condition ($a f(n/b) \leq k f(n)$ for some $k < 1$): $T(n) = \Theta(f(n))$. The three cases: recursion dominates, recursion and split balance, split dominates.

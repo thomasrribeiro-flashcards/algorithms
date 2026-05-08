@@ -29,6 +29,20 @@ A: Memoization: write the recursive function naturally; add a cache (dict/array)
 Q: Describe the FIVE-STEP recipe for designing a DP algorithm.
 A: (1) [Define the state]: what parameters uniquely describe a subproblem? (2) [State space size]: how many subproblems? (3) [Base cases]: trivial subproblems with direct answers. (4) [Recurrence]: how does a subproblem's answer depend on smaller ones? (5) [Order of computation]: in what order do we fill the table? Total time = (state space size) × (work per state). Space = state space size (possibly reducible).
 
+## 10.4b Pattern Recognition: When to Reach for DP
+
+Q: A problem asks for "the minimum/maximum/number of ways" over choices that compose, and brute force is exponential. What's your first move?
+A: Try DP. Look for optimal substructure (optimal solution composes from optimal sub-solutions) and overlapping subproblems (same sub-call recurs).
+
+Q: A problem decomposes recursively but each subproblem is unique (no overlap). DP or divide-and-conquer?
+A: Divide-and-conquer. DP only pays off when caching saves repeated work; without overlap, it's just recursion with extra memory.
+
+Q: A problem asks for the optimal way to PARTITION a sequence (parenthesization, palindrome partitioning, optimal BST). Which DP shape?
+A: Interval DP — state $dp[i][j]$ over a range, recurrence splits at every $k \in [i, j)$. Usually $O(n^3)$.
+
+Q: A problem has $n \leq 20$ items and asks for an optimal subset (TSP, set cover variants). Which DP shape?
+A: Subset/bitmask DP — state indexed by a bitmask of included items. $O(2^n \cdot \text{poly}(n))$.
+
 ## 10.5 Longest Common Subsequence
 
 Q: State the [Longest Common Subsequence (LCS)] problem.

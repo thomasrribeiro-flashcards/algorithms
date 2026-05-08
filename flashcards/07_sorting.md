@@ -11,6 +11,20 @@ tags = ["cs", "algorithms", "sorting", "quicksort", "mergesort", "heapsort", "ra
 Q: Why is SORTING one of the most-studied problems in computer science?
 A: Because (1) it's ubiquitous — search, database indexes, statistics, rendering all depend on sorted data. (2) It's RICH: many algorithms with distinct trade-offs (time, space, stability, adaptivity). (3) Sorting is a CANONICAL teaching vehicle for divide-and-conquer, randomization, amortization, and lower bounds. (4) $\Theta(n \log n)$ is a sharp OPTIMAL bound for comparison-based sorting — a foundational result.
 
+## 7.1b Pattern Recognition: Picking the Right Sort
+
+Q: You need to sort $n < 50$ elements, possibly nearly sorted. Which sort?
+A: Insertion sort — $O(n)$ best case on nearly-sorted, low constants, simple, stable.
+
+Q: You need a guaranteed $O(n \log n)$ worst case AND stability. Which sort?
+A: Mergesort — both properties out of the box. Cost: $O(n)$ extra space.
+
+Q: You need fast average performance and in-place sorting; stability optional. Which sort?
+A: Quicksort with randomized pivot (or introsort if you need a $O(n \log n)$ worst-case ceiling).
+
+Q: All keys are integers in a known small range $[0, k]$ with $k = O(n)$. Which sort?
+A: Counting sort — $O(n + k)$, beats $\Omega(n \log n)$ comparison lower bound by exploiting the key structure.
+
 ## 7.2 Elementary Sorts
 
 Q: Describe [insertion sort] and its complexity.
