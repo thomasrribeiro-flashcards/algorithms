@@ -8,7 +8,7 @@ tags = ["cs", "algorithms", "graph", "bfs", "dfs", "topological-sort", "scc", "t
 
 ## 11.1 Graph Representations
 
-C: A [graph] $G = (V, E)$ consists of a set of [vertices] $V$ and a set of [edges] $E \subseteq V \times V$ (directed) or $\{V \text{ pairs}\}$ (undirected).
+C: A graph $G = (V, E)$ consists of a set of [vertices] $V$ and a set of [edges] $E \subseteq V \times V$ (directed) or $\{V \text{ pairs}\}$ (undirected).
 
 Q: Compare ADJACENCY LIST vs ADJACENCY MATRIX representations.
 A: Adjacency list: for each vertex $v$, a list of neighbors. Space $O(V + E)$. Iteration over neighbors of $v$ is $O(\deg(v))$. Best for SPARSE graphs. Adjacency matrix: $V \times V$ binary matrix $M[i][j] = 1$ iff $(i, j) \in E$. Space $O(V^2)$. Edge lookup is $O(1)$. Best for DENSE graphs. Most real-world graphs are sparse — adjacency list is the default.
@@ -18,8 +18,11 @@ A: Adjacency list: for each vertex $v$, a list of neighbors. Space $O(V + E)$. I
 Q: Describe [breadth-first search (BFS)].
 A: Given a start vertex $s$: visit vertices in order of INCREASING DISTANCE (fewest edges from $s$). Uses a QUEUE. (1) Enqueue $s$; mark visited. (2) While queue non-empty: dequeue $v$; for each unvisited neighbor $u$ of $v$, mark $u$, record $\text{parent}(u) = v$ and $\text{dist}(u) = \text{dist}(v) + 1$, enqueue $u$. Time: $O(V + E)$ with adjacency list. Computes shortest paths in UNWEIGHTED graphs.
 
-Q: What graph properties does BFS compute?
-A: (1) [Shortest path] from source in unweighted graphs (number of edges). (2) [CONNECTED COMPONENTS] in undirected graphs. (3) [BIPARTITENESS] check: 2-color vertices by BFS layer parity; fails if any edge has same-color endpoints. (4) [REACHABILITY]: all vertices reachable from source. (5) Used as a building block for many algorithms (e.g., Edmonds-Karp max-flow uses BFS for shortest augmenting paths).
+Q: What does BFS compute directly from a source vertex $s$?
+A: (1) [Shortest paths] from $s$ in unweighted graphs (number of edges). (2) [REACHABILITY]: all vertices reachable from $s$. Restarted from each unvisited vertex, it also finds [CONNECTED COMPONENTS] in undirected graphs.
+
+Q: Name two algorithms that use BFS as a building block.
+A: (1) [BIPARTITENESS] check: 2-color vertices by BFS layer parity. (2) [Edmonds-Karp] max-flow: BFS finds shortest augmenting paths.
 
 ## 11.3 Depth-First Search
 

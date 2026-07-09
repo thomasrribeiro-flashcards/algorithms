@@ -64,8 +64,11 @@ A: Because it's polynomial in the NUMERIC value of $W$, but EXPONENTIAL in the B
 Q: Describe [edit distance] (Levenshtein distance) via DP.
 A: Minimum number of SINGLE-CHARACTER OPERATIONS (insert, delete, substitute) to transform string $X$ into $Y$. State: $E[i][j]$ = edit distance from $x_1 \ldots x_i$ to $y_1 \ldots y_j$. Recurrence: if $x_i = y_j$, $E[i][j] = E[i-1][j-1]$ (match, no cost); else $E[i][j] = 1 + \min(E[i-1][j], E[i][j-1], E[i-1][j-1])$ (delete, insert, substitute). Base: $E[i][0] = i$, $E[0][j] = j$. Time: $O(mn)$.
 
-Q: What are practical APPLICATIONS of edit distance?
-A: (1) SPELL CHECKERS ("did you mean...?"). (2) DIFF UTILITIES and version control (line-level edit distance). (3) DNA SEQUENCE ALIGNMENT (Needleman-Wunsch, Smith-Waterman are weighted generalizations). (4) OCR and speech recognition (comparing candidate transcriptions). (5) PLAGIARISM DETECTION. The DP framework extends naturally to weighted operations (costs differ per character) and local alignments.
+Q: What TEXT-PROCESSING applications use edit distance directly?
+A: (1) SPELL CHECKERS ("did you mean...?"). (2) DIFF UTILITIES and version control (line-level edit distance). (3) PLAGIARISM DETECTION.
+
+Q: How does the edit-distance DP generalize beyond plain string comparison?
+A: To WEIGHTED operations (costs differ per character) and LOCAL alignments: DNA SEQUENCE ALIGNMENT (Needleman-Wunsch global, Smith-Waterman local) and OCR/speech recognition (comparing candidate transcriptions).
 
 ## 10.8 Matrix Chain Multiplication
 

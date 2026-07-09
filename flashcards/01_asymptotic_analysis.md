@@ -38,8 +38,14 @@ A: Big-O allows the ratio to APPROACH a constant (possibly equal to 1); little-o
 
 ## 1.5 Common Growth Rates
 
-Q: Order the common growth rates from SLOWEST to FASTEST.
-A: $1 \ll \log \log n \ll \log n \ll (\log n)^c \ll n^\epsilon \ll \sqrt{n} \ll n \ll n \log n \ll n^2 \ll n^3 \ll n^k \ll 2^n \ll n! \ll n^n$. Key transitions: constant ≪ logarithmic ≪ polylog ≪ polynomial ≪ exponential ≪ factorial. Polynomial algorithms are "efficient"; exponential are "intractable" for all but tiny inputs.
+Q: Order the common SUB-LINEAR growth rates from SLOWEST to FASTEST.
+A: $1 \ll \log \log n \ll \log n \ll (\log n)^c \ll n^\epsilon \ll \sqrt{n} \ll n$ (for any constant $c > 0$ and any $0 < \epsilon < 1/2$).
+
+Q: Order the common SUPER-LINEAR growth rates from SLOWEST to FASTEST.
+A: $n \ll n \log n \ll n^2 \ll n^3 \ll n^k \ll 2^n \ll n! \ll n^n$ (for constant $k > 3$).
+
+Q: Order the growth-rate CLASSES from slowest to fastest.
+A: Constant ≪ logarithmic ≪ polylog ≪ polynomial ≪ exponential ≪ factorial. Polynomial algorithms are "efficient"; exponential are "intractable" for all but tiny inputs.
 
 Q: Compare runtime of $n = 10^6$ at different growth rates (nanoseconds per op).
 A: $\log_2(10^6) \approx 20$: 20 ns. $n = 10^6$: 1 ms. $n \log n \approx 2 \cdot 10^7$: 20 ms. $n^2 = 10^{12}$: 17 minutes. $n^3 = 10^{18}$: 32 years. $2^n$: cosmic. These numbers drive algorithm selection: $n \log n$ is the practical threshold for "scales to large data"; $n^2$ is fine for $n \leq 10^4$ but painful above; exponential is prohibitive beyond $n \approx 30$.

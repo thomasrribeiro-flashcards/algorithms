@@ -71,8 +71,11 @@ A: [Graphic matroid]: edges of a graph with $\mathcal{I}$ = FORESTS (cycle-free 
 
 ## 9.9 When Greedy Fails
 
-Q: Name classical problems where GREEDY FAILS and requires a stronger approach.
-A: (1) [0/1 knapsack] — needs DP. (2) [Traveling salesperson] — NP-hard; greedy gives $O(\log n)$-approximation at best. (3) [General graph coloring] — greedy uses $O(\Delta + 1)$ colors; optimal can be far fewer. (4) [Shortest path in graphs with NEGATIVE edges] — Dijkstra (greedy) fails; need Bellman-Ford. (5) [Change-making with arbitrary denominations] — greedy fails (try 25, 10, 1 with target 30: greedy 25+1+1+1+1+1 = 6 coins; optimal 10+10+10 = 3).
+Q: Name classical OPTIMIZATION problems where GREEDY FAILS and DP is needed instead.
+A: (1) [0/1 knapsack]. (2) [Change-making with arbitrary denominations] — try 25, 10, 1 with target 30: greedy 25+1+1+1+1+1 = 6 coins; optimal 10+10+10 = 3.
+
+Q: Name classical GRAPH problems where GREEDY FAILS.
+A: (1) [Traveling salesperson] — NP-hard; greedy gives $O(\log n)$-approximation at best. (2) [General graph coloring] — greedy uses $O(\Delta + 1)$ colors; optimal can be far fewer. (3) [Shortest path in graphs with NEGATIVE edges] — Dijkstra (greedy) fails; need Bellman-Ford.
 
 ## 9.10 Exchange Argument Template
 
@@ -82,7 +85,7 @@ A: (1) Let $G$ = greedy's solution, $O$ = optimal. Assume $G \neq O$. (2) Find a
 ## 9.11 Approximation via Greedy
 
 Q: How does greedy serve as an APPROXIMATION algorithm for NP-hard problems?
-A: Even when NOT optimal, greedy often has provable approximation ratios: (1) [Set cover]: greedy gives $H_n \approx \ln n$-approximation (tight). (2) [Vertex cover]: 2-approximation via "take both endpoints of an uncovered edge." (3) [Max cut]: random/greedy achieves 1/2 of optimum. Greedy approximations are fast, simple, often near-optimal in practice. Combined with LP rounding (chapter), they form the backbone of modern approximation algorithms.
+A: Even when NOT optimal, greedy often has provable approximation ratios: (1) [Set cover]: greedy gives $H_n \approx \ln n$-approximation (tight). (2) [Vertex cover]: 2-approximation via "take both endpoints of an uncovered edge." (3) [Max cut]: random/greedy achieves 1/2 of optimum. Greedy approximations are fast, simple, often near-optimal in practice. Combined with LP rounding, they form the backbone of modern approximation algorithms.
 
 ## 9.12 A Worked Greedy Problem
 

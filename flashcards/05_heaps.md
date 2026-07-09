@@ -67,8 +67,20 @@ A: Generalization where each node has $d$ children (instead of 2). Height become
 
 ## 5.10 Heaps Beyond Priority Queues
 
-Q: What other algorithmic uses do HEAPS have?
-A: (1) [k-th smallest]: maintain a max-heap of size $k$; $O(n \log k)$. (2) [Median of a stream]: two heaps (max-heap of lower half, min-heap of upper half); $O(\log n)$ per element. (3) [Merging $k$ sorted lists]: min-heap over $k$ current heads; $O(n \log k)$ total. (4) [Huffman coding]: extract two minimums, combine, reinsert — build optimal prefix code. (5) [Event-driven simulation]: priority = event time.
+Q: How do you find the [k-th smallest] of $n$ elements using a heap?
+A: Maintain a MAX-HEAP of size $k$ while scanning; replace the max when a smaller element arrives. $O(n \log k)$.
+
+Q: How do you maintain the [median of a stream] using heaps?
+A: TWO heaps: a max-heap of the lower half and a min-heap of the upper half, kept balanced. $O(\log n)$ per element.
+
+Q: How do you [merge $k$ sorted lists] using a heap?
+A: Min-heap over the $k$ current heads; repeatedly extract the min and insert that list's next element. $O(n \log k)$ total.
+
+Q: What role does a heap play in [Huffman coding]?
+A: Min-heap of frequencies: extract two minimums, combine, reinsert — builds the optimal prefix code.
+
+Q: What is the priority in a heap-based [event-driven simulation]?
+A: The EVENT TIME — extract-min always yields the next event to process.
 
 ## 5.11 Lazy Deletion
 

@@ -10,7 +10,7 @@ tags = ["cs", "algorithms", "network-flows", "max-flow", "min-cut", "ford-fulker
 
 C: A [flow network] is a DIRECTED graph $G = (V, E)$ with a non-negative CAPACITY $c(u, v) \geq 0$ on each edge, a distinguished SOURCE $s$, and a distinguished SINK $t$.
 
-C: A [flow] $f$ assigns $f(u, v) \geq 0$ to each edge subject to (i) [capacity]: $f(u, v) \leq c(u, v)$, and (ii) [conservation]: for every $v \neq s, t$, $\sum_u f(u, v) = \sum_w f(v, w)$ (flow in = flow out).
+C: A flow $f$ assigns $f(u, v) \geq 0$ to each edge subject to (i) [capacity]: $f(u, v) \leq c(u, v)$, and (ii) [conservation]: for every $v \neq s, t$, $\sum_u f(u, v) = \sum_w f(v, w)$ (flow in = flow out).
 
 ## 13.2 The Maximum Flow Problem
 
