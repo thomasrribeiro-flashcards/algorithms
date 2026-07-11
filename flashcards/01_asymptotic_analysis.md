@@ -1,6 +1,6 @@
 +++
 order = 1
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "asymptotic-analysis", "big-o", "recurrences", "master-theorem"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 order = 2
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "data-structures", "array", "linked-list", "stack", "queue", "dynamic-array"]
 +++
 

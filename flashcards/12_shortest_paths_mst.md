@@ -1,6 +1,6 @@
 +++
 order = 12
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "graph", "shortest-paths", "dijkstra", "bellman-ford", "mst", "kruskal", "prim"]
 +++
 

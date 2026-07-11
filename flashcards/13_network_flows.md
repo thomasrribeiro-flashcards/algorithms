@@ -1,6 +1,6 @@
 +++
 order = 13
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "network-flows", "max-flow", "min-cut", "ford-fulkerson", "bipartite-matching", "edmonds-karp"]
 +++
 

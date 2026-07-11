@@ -1,6 +1,6 @@
 +++
 order = 3
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "data-structures", "hash-table", "hashing", "collision", "chaining", "open-addressing"]
 +++
 

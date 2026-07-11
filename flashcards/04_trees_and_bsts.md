@@ -1,6 +1,6 @@
 +++
 order = 4
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "data-structures", "bst", "avl", "red-black", "b-tree", "tree"]
 +++
 

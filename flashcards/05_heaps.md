@@ -1,6 +1,6 @@
 +++
 order = 5
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "data-structures", "heap", "priority-queue", "binary-heap", "heapsort"]
 +++
 

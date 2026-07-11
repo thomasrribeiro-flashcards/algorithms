@@ -1,6 +1,6 @@
 +++
 order = 10
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "dynamic-programming", "memoization", "optimal-substructure", "knapsack", "lcs"]
 +++
 

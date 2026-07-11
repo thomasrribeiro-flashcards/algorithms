@@ -1,6 +1,6 @@
 +++
 order = 9
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "greedy", "matroid", "huffman", "interval-scheduling", "exchange-argument"]
 +++
 

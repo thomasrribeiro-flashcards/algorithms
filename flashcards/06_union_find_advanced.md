@@ -1,6 +1,6 @@
 +++
 order = 6
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "data-structures", "union-find", "disjoint-set", "segment-tree", "fenwick", "lca"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 order = 11
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "graph", "bfs", "dfs", "topological-sort", "scc", "traversal"]
 +++
 

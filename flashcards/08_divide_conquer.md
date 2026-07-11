@@ -1,6 +1,6 @@
 +++
 order = 8
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "divide-and-conquer", "recursion", "strassen", "closest-pair", "fft"]
 +++
 

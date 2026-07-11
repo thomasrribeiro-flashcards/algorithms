@@ -1,6 +1,6 @@
 +++
 order = 15
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "strings", "kmp", "rabin-karp", "suffix-tree", "suffix-array", "aho-corasick"]
 +++
 

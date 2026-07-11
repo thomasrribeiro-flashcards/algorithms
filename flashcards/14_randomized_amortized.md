@@ -1,6 +1,6 @@
 +++
 order = 14
-subject = "Computer Science"
+subject = "computer-science"
 tags = ["cs", "algorithms", "randomized", "amortized", "las-vegas", "monte-carlo", "potential-function"]
 +++
 
